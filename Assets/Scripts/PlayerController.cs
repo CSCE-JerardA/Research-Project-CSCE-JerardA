@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update() // We'll handle everything in Update for this test
+    void Update() 
     {
-        // --- 1. Horizontal Movement Test (Checks raw key press) ---
+        
         float horizontalVelocity = 0;
         
         // Check for 'D' key press
@@ -33,11 +33,12 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontalVelocity, rb.linearVelocity.y);
 
 
-        // --- 2. Jump Test (No Ground Check) ---
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-    // Remove FixedUpdate() entirely for this test.
+    
 }
+
